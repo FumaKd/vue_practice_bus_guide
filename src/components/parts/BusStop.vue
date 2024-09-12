@@ -1,4 +1,5 @@
 <script setup>
+import { defineProps } from "vue"
 import StopInfo from "./StopInfo.vue";
 
 const props = defineProps(["stopInfo", "imgWidth"])

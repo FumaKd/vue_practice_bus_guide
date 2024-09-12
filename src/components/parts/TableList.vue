@@ -1,5 +1,6 @@
 <script setup>
-import { computed } from "vue"
+import { computed, defineProps } from "vue"
+
 const props = defineProps(["busInfo"])
 const busTables = computed(() => props.busInfo["時刻表情報"])
 const busStops = computed(() => {
@@ -14,12 +15,13 @@ const busStops = computed(() => {
     </v-chip>
     <div>
       <v-card v-for="busTable in busTables"
+        :key="busTable.time_table_id"
         class="ma-2"
         color="blue"
         elevation="8"
       >
         <v-card-title class="text-h5 font-weight-bold">
-          {{ busTable.route_name }}系統　{{ busTable.destination }}
+          {{ busTable.route_name }}系統 {{ busTable.destination }}
         </v-card-title>
         <v-card-subtitle>
           @ {{ busStops.filter((i) => i.bus_stop_id === busTable.bus_stop_id)[0].bus_stop_name }}

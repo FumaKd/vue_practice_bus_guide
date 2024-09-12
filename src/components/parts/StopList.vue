@@ -1,7 +1,8 @@
 <script setup>
+import { defineProps } from "vue"
 import { useRouter } from 'vue-router';
 
-const props = defineProps(["stopInfo"])
+defineProps(["stopInfo"])
 const router = useRouter()
 function pressedBtn(timeTableId) {
   router.push({
@@ -16,7 +17,7 @@ function pressedBtn(timeTableId) {
 <template>
   <v-container class="pa-4">
     <v-row class="d-flex">
-      <v-col v-for="stop in stopInfo" class="v-col-12">
+      <v-col v-for="stop in stopInfo" :key="stop.bus_stop_id" class="v-col-12">
         <v-card 
           color="blue"
           elevation="8"

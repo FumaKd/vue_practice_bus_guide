@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch, onMounted, inject } from "vue"
+import { ref, computed, watch, onMounted, inject, defineProps } from "vue"
 
 import SelectDateType from '../parts/SelectDateType.vue'
 

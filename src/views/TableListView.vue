@@ -3,7 +3,7 @@ import { inject } from "vue"
 
 import AllHeader from "@/components/parts/AllHeader.vue"
 import TableList from "@/components/parts/TableList.vue"
-import Loading from "@/components/parts/Loading.vue"
+import LoadingComponent from "@/components/parts/LoadingComponent.vue"
 
 const busInfo = inject("busInfo")
 </script>
@@ -12,7 +12,7 @@ const busInfo = inject("busInfo")
   <AllHeader/>
   <v-main>
     <TableList v-if="busInfo" :bus-info="busInfo"/>
-    <Loading v-else/>
+    <LoadingComponent v-else/>
   </v-main>
 </template>
 

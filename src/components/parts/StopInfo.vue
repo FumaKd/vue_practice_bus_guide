@@ -1,5 +1,7 @@
 <script setup>
-const props = defineProps(["stopInfo"])
+import { defineProps } from "vue"
+
+defineProps(["stopInfo"])
 </script>
 
 <template>

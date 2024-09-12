@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from "vue"
+import { ref, watch, defineEmits, defineProps } from "vue"
 const valueAndLabelMap = {
   "平日": "wkd",
   "土曜": "std",

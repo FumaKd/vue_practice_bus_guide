@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from "vue-router"
 
-import Clock from "./Clock.vue";
+import ClockComponent from "./ClockComponent.vue";
 const routeName = useRouter().currentRoute.value.name
 
 
@@ -13,7 +13,7 @@ const routeName = useRouter().currentRoute.value.name
       バス情報サイト
     </v-app-bar-title>
     <template v-slot:append>
-      <Clock/>
+      <ClockComponent/>
     </template>
     <template v-slot:prepend>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
