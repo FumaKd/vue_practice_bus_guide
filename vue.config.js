@@ -3,4 +3,5 @@ module.exports = defineConfig({
   outputDir: 'docs',
   assetsDir: '',
   publicPath: './',
+  baseUrl: './'
 })
