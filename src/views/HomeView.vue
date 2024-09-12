@@ -1,18 +1,18 @@
-<template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
+<script setup>
+import { inject } from "vue"
 
-<script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import AllHeader from "@/components/parts/AllHeader.vue"
+import StopMap from "@/components/templates/StopMap.vue"
+import Loading from "@/components/parts/Loading.vue"
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
-}
+const busInfo = inject("busInfo")
 </script>
+
+<template>
+  <AllHeader/>
+  <v-main>
+    <StopMap v-if="busInfo" :bus-info="busInfo"/>
+    <Loading v-else/>
+  </v-main>
+  
+</template>
